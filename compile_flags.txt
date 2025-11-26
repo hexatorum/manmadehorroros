@@ -1,0 +1,4 @@
+-O2
+-ffreestanding
+-nostdlib
+-Isrc
