@@ -1,12 +1,13 @@
+#include "arch/x86/paging.h"
 #include <stddef.h>
 #include <stdint.h>
 #include <stdbool.h>
 #include <cpuid.h>
 
-#include <arch/io.h>
-#include <arch/gdt.h>
-#include <arch/interrupts.h>
-#include <arch/irq.h>
+#include <arch/x86/io.h>
+#include <arch/x86/gdt.h>
+#include <arch/x86/interrupts.h>
+#include <arch/x86/pic.h>
 #include <kernel/tty.h>
 #include <kernel/serial.h>
 #include <kernel/console.h>
@@ -51,74 +52,15 @@ static void handle_key_down(uint8_t code, bool capital, bool extended)
 
 void main()
 {   
-    // console_puts("terminal initialized\n");
-    // console_puts("loading gdt... ");
-
     gdt_init();
 
-    // console_set_style(SUCCESS);
-    // console_puts("done\n");
-    // console_reset_style();
-
-    // console_puts("loading idt... ");
-
     idt_init();
-
-    // console_set_style(SUCCESS);
-    // console_puts("done\n");
-    // console_reset_style();
-
-    // console_puts("initializing irqs... ");
-
     irq_init(32);
-
-    // console_set_style(SUCCESS);
-    // console_puts("done\n");
-    // console_reset_style();
-    
     interrupts_enable();
-
-    // console_puts("initializing serial... ");
-
-    // if (!serial_init())
-    // {
-    //     console_set_style(WARNING);
-    //     console_puts("FAILED, will not be used\n");
-    // }
-    // else
-    // {
-    //     console_set_style(SUCCESS);
-    //     console_puts("done\n");  
-    // }
-    // console_reset_style();
-
-    // console_puts("initializing ps/2... ");
-
-    // if (!ps2_init())
-    // {
-    //     // console_set_style(ERROR);
-    //     // console_puts("FAILED, halting\n");
-    //     return;
-    // }
-
-    // console_set_style(SUCCESS);
-    // console_puts("done\n");
-    // console_reset_style();
-
-    // console_puts("initializing keyboard... ");
-
-    // if (!keyboard_init())
-    // {
-    //     // console_set_style(ERROR);
-    //     // console_puts("FAILED, halting\n");
-    //     return;
-    // }
-
-    // keyboard_set_down_handler(handle_key_down);
-
-    // console_set_style(SUCCESS);
-    // console_puts("done\n");
-    // console_reset_style();
+    
+    paging_init();
+    
+    serial_init();
 
     tty_set_putc(NULL);
     tty_set_puts(serial_puts);

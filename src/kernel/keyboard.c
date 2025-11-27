@@ -1,6 +1,6 @@
 #include <kernel/keyboard.h>
 
-#include <arch/interrupts.h>
+#include <arch/x86/interrupts.h>
 #include <kernel/ps2.h>
 #include <kernel/serial.h>
 

@@ -1,6 +1,6 @@
 #include <kernel/serial.h>
 
-#include <arch/io.h>
+#include <arch/x86/io.h>
 
 #define SERIAL_BASE 0x3F8
 

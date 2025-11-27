@@ -1,9 +1,9 @@
-#include <arch/interrupts.h>
+#include <arch/x86/interrupts.h>
 
 #include <stdbool.h>
 
-#include <arch/io.h>
-#include <arch/irq.h>
+#include <arch/x86/io.h>
+#include <arch/x86/pic.h>
 
 #define IDT_FLAGS_TRAP 0b10001111
 #define IDT_FLAGS_INTERRUPT 0b10001110

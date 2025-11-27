@@ -26,9 +26,10 @@ pub fn build(b: *std.Build) void {
             "src/kernel/console.c",
             "src/kernel/keyboard.c",
             "src/kernel/ps2.c",
-            "src/arch/gdt.c",
-            "src/arch/interrupts.c",
-            "src/arch/irq.c",
+            "src/arch/x86/gdt.c",
+            "src/arch/x86/interrupts.c",
+            "src/arch/x86/pic.c",
+            "src/arch/x86/paging.c",
             "src/lib/memory.c",
         },
     });

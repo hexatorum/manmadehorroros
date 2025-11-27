@@ -5,6 +5,7 @@
 - [x] load a gdt
 - [x] add interrupts
 - [x] read input from ps/2 keyboard
-- [ ] set up paging
+- [x] set up paging
+- [ ] make a page frame allocator
 - [ ] make a basic shell with hardcoded commands
 - iunno more to come later

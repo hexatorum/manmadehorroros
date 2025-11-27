@@ -1,5 +1,5 @@
-#ifndef INTERRUPTS_H
-#define INTERRUPTS_H
+#ifndef X86_INTERRUPTS_H
+#define X86_INTERRUPTS_H
 
 #include <stdint.h>
 #include <stddef.h>

@@ -1,6 +1,6 @@
 #include <kernel/ps2.h>
 
-#include <arch/io.h>
+#include <arch/x86/io.h>
 #include <lib/bits.h>
 
 #define PS2_DATA 0x60

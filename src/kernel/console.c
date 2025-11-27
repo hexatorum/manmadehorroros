@@ -1,6 +1,6 @@
 #include <kernel/console.h>
 
-#include <arch/io.h>
+#include <arch/x86/io.h>
 #include <lib/memory.h>
 
 #define WIDTH 80

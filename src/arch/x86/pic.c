@@ -1,6 +1,6 @@
-#include <arch/irq.h>
+#include <arch/x86/pic.h>
 
-#include <arch/io.h>
+#include <arch/x86/io.h>
 
 #define PIC_MASTER_COMMAND 0x20
 #define PIC_MASTER_DATA 0x21
