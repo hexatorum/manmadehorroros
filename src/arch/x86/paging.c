@@ -5,6 +5,8 @@
 static uint32_t paging_directory[1024] __attribute__((aligned(4096)));
 static uint32_t paging_table[1024] __attribute__((aligned(4096)));
 
+extern void paging_load(uint32_t *directory);
+
 void paging_init()
 {
     int i;
@@ -25,7 +27,7 @@ void paging_init()
         "mov %0, %%eax\n"
         "mov %%eax, %%cr3\n"
         "mov %%cr0, %%eax\n"
-        "or 0x80000000, %%eax\n"
+        "or $0x80000000, %%eax\n"
         "mov %%eax, %%cr0\n"
         :
         : "m"(paging_directory)

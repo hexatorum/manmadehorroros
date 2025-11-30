@@ -57,22 +57,24 @@ void main()
     idt_init();
     irq_init(32);
     interrupts_enable();
-    
+
     paging_init();
     
     serial_init();
 
-    tty_set_putc(NULL);
-    tty_set_puts(serial_puts);
+    tty_set_putc(serial_putc);
 
-    tty_puts("\x1B[2J\x1B[;H");
+    tty_putsn("GDT init... OK", 12);
+    tty_puts("uhhhh next question\n\n");
     tty_puts("manmadehorrorOS -1.0\n");
     tty_puts("copyleft (C) 2025 man-made horrors beyond your comprehension corporation\n\n");
 
-    while (true)
+    while (true) 
     {
         tty_puts("$ ");
-        
+
+        console_puts("kurwa");
+
         while (true); // replacement for wait for input
     }
 }

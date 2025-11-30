@@ -32,6 +32,12 @@ pub fn build(b: *std.Build) void {
             "src/arch/x86/paging.c",
             "src/lib/memory.c",
         },
+        .flags = &.{
+            "-mno-80387",
+            "-mno-mmx",
+            "-mno-sse",
+            "-mno-sse2",
+        },
     });
     kernel.addIncludePath(b.path("src/"));
     kernel.setLinkerScript(b.path("link.ld"));

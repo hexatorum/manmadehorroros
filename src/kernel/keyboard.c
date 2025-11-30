@@ -66,7 +66,7 @@ static void keyboard_irq_handler()
     else
         keyboard_handle_up(code, extended);
 
-    serial_puts(modifiers.shift || modifiers.caps ? "capsy locky\n" : "no caps?\n");
+    // serial_puts(modifiers.shift || modifiers.caps ? "capsy locky\n" : "no caps?\n");
 }
 
 bool keyboard_init()

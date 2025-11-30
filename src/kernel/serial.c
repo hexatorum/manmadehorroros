@@ -32,17 +32,9 @@ bool serial_is_initialized()
     return serial_initialized;
 }
 
-void serial_write(char value)
+void serial_putc(char c)
 {
     while ((in(SERIAL_BASE + 5) & 0x20) == 0);
     
-    out(SERIAL_BASE, value);
-}
-
-void serial_puts(const char *string)
-{
-    while (*string)
-    {
-        serial_write(*string++);
-    }
+    out(SERIAL_BASE, c);
 }

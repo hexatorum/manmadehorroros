@@ -4,6 +4,7 @@
 
 #include <arch/x86/io.h>
 #include <arch/x86/pic.h>
+#include <stdint.h>
 
 #define IDT_FLAGS_TRAP 0b10001111
 #define IDT_FLAGS_INTERRUPT 0b10001110

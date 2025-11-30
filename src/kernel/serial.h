@@ -6,7 +6,6 @@
 
 bool serial_init();
 bool serial_is_initialized();
-void serial_write(char value);
-void serial_puts(const char *string);
+void serial_putc(char c);
 
 #endif
